@@ -4,128 +4,148 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>OFERTAS FLASH | Última Oportunidad</title>
+            <title>⚡ OFERTAS LÍMITE | Amazon Deals</title>
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
             <style>
-                :root { --primary: #FF9900; --accent: #FF0000; --dark: #131921; --light: #ffffff; }
-                body { font-family: 'Poppins', sans-serif; background-color: #f3f3f3; margin: 0; padding: 0; color: #333; }
+                :root { --primary: #FF9900; --accent: #D32F2F; --dark: #131921; }
+                body { font-family: 'Poppins', sans-serif; background-color: #f0f2f5; margin: 0; padding: 0; }
                 
-                /* CABECERA DE URGENCIA */
-                .top-bar { background: var(--accent); color: white; text-align: center; padding: 10px; font-weight: bold; font-size: 0.9rem; animation: pulse-red 2s infinite; }
-                @keyframes pulse-red { 0% { background: #d80000; } 50% { background: #ff3333; } 100% { background: #d80000; } }
+                /* BARRA SUPERIOR DE URGENCIA */
+                .urgency-bar { background: var(--accent); color: white; text-align: center; padding: 8px; font-weight: bold; font-size: 0.9rem; animation: flash 2s infinite; }
+                @keyframes flash { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
                 
-                header { background: var(--dark); padding: 20px; text-align: center; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-                h1 { margin: 0; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 1.8rem; }
-                .timer { font-size: 1.2rem; color: #FF9900; margin-top: 5px; font-weight: 600; }
+                header { background: var(--dark); padding: 20px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+                h1 { margin: 0; font-style: italic; letter-spacing: 1px; }
+                .countdown { color: #FF9900; font-size: 1.4rem; font-weight: 800; margin-top: 5px; }
 
-                /* CONTENEDOR GRID */
-                .container { max-width: 1000px; margin: 20px auto; padding: 0 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+                .container { max-width: 900px; margin: 20px auto; padding: 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
                 
-                /* TARJETA PSICOLÓGICA */
-                .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.05); }
-                .card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+                /* TARJETA DE PRODUCTO */
+                .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); position: relative; border: 1px solid #e0e0e0; transition: transform 0.2s; }
+                .card:hover { transform: scale(1.02); border-color: var(--primary); }
                 
-                .badge-discount { position: absolute; top: 15px; left: 0; background: var(--accent); color: white; padding: 5px 15px; font-weight: 800; font-size: 0.9rem; clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%); box-shadow: 2px 2px 5px rgba(0,0,0,0.3); z-index: 10; }
+                .badge-discount { position: absolute; top: 10px; left: 0; background: var(--accent); color: white; padding: 4px 12px; font-weight: 800; font-size: 0.8rem; box-shadow: 2px 2px 5px rgba(0,0,0,0.2); }
                 
-                img { width: 100%; height: 250px; object-fit: contain; padding: 20px; background: white; border-bottom: 1px solid #eee; }
+                img { width: 100%; height: 220px; object-fit: contain; padding: 20px; background: white; border-bottom: 1px solid #f0f0f0; }
                 
-                .card-content { padding: 20px; text-align: center; }
-                h3 { margin: 0 0 10px; font-size: 1.1rem; color: var(--dark); line-height: 1.4; height: 3em; overflow: hidden; }
+                .card-content { padding: 15px; text-align: center; }
+                h3 { margin: 0 0 10px; font-size: 1rem; color: #333; line-height: 1.4; height: 2.8em; overflow: hidden; }
                 
-                .price-container { display: flex; justify-content: center; align-items: baseline; gap: 10px; margin-bottom: 15px; }
-                .price-old { text-decoration: line-through; color: #999; font-size: 1rem; }
-                .price-new { color: #B12704; font-size: 2rem; font-weight: 800; }
+                .price-new { color: #B12704; font-size: 1.8rem; font-weight: 800; display: block; margin-bottom: 10px; }
                 
-                /* BARRA DE STOCK (ESCASEZ) */
-                .scarcity-text { color: #d32f2f; font-weight: bold; font-size: 0.9rem; margin-bottom: 5px; text-align: left; }
-                .progress-bar { width: 100%; height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden; margin-bottom: 20px; }
-                .progress-fill { height: 100%; background: linear-gradient(90deg, #ff9900, #ff0000); border-radius: 4px; }
+                .scarcity-text { color: #D32F2F; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; text-align: left; }
+                .progress-bar { width: 100%; height: 6px; background: #eee; border-radius: 3px; margin-bottom: 15px; overflow: hidden; }
+                .progress-fill { height: 100%; background: linear-gradient(90deg, #ff9900, #ff4444); }
                 
-                /* BOTÓN DE ACCIÓN (DOPAMINA) */
-                .cta-button { display: block; width: 100%; padding: 15px 0; background: linear-gradient(to bottom, #ffd814, #f7ca00); border: 1px solid #fcd200; border-radius: 50px; color: #111; font-weight: 800; text-transform: uppercase; text-decoration: none; font-size: 1.1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.2s; animation: pulse-btn 2s infinite; }
-                .cta-button:hover { filter: brightness(1.05); transform: scale(1.02); }
-                @keyframes pulse-btn { 0% { box-shadow: 0 0 0 0 rgba(255, 216, 20, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(255, 216, 20, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 216, 20, 0); } }
+                .cta-button { display: block; width: 100%; padding: 12px 0; background: #FFD814; border: 1px solid #FCD200; border-radius: 8px; color: #111; font-weight: bold; text-decoration: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1); animation: pulse 2s infinite; }
+                @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 216, 20, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(0,0,0,0); } 100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); } }
                 
-                .shipping-info { margin-top: 15px; font-size: 0.8rem; color: #007600; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 5px; }
+                .shipping-info { margin-top: 10px; font-size: 0.75rem; color: #007600; font-weight: 600; }
                 
-                /* NOTIFICACIÓN SOCIAL (FAKE) */
-                .social-proof { position: fixed; bottom: 20px; left: 20px; background: white; padding: 15px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px; z-index: 100; animation: slideIn 0.5s ease-out; border-left: 4px solid #00c853; max-width: 300px; }
-                @keyframes slideIn { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-                .social-avatar { width: 40px; height: 40px; background: #ddd; border-radius: 50%; object-fit: cover; }
-                .social-text { font-size: 0.85rem; color: #333; }
-                .social-time { display: block; font-size: 0.7rem; color: #888; margin-top: 2px; }
+                /* NOTIFICACIÓN SOCIAL (JS) */
+                .toast { position: fixed; bottom: 20px; left: 20px; background: white; padding: 12px 20px; border-radius: 50px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 10px; z-index: 99; transform: translateY(150%); transition: transform 0.5s; border: 1px solid #eee; }
+                .toast.show { transform: translateY(0); }
+                .toast-icon { font-size: 1.2rem; }
+                .toast-text { font-size: 0.8rem; color: #333; }
+                .toast-text strong { color: var(--accent); }
 
-                footer { text-align: center; padding: 40px; color: #666; font-size: 0.8rem; }
+                footer { text-align: center; padding: 30px; color: #888; font-size: 0.8rem; }
             </style>
         </head>
         <body>
-            <div class="top-bar">⚠️ OFERTAS FLASH: ESTOS PRECIOS EXPIRAN EN 12:00 MINUTOS</div>
+            <div class="urgency-bar">⚠️ ATENCIÓN: PRECIOS VÁLIDOS SOLO DURANTE LA PRÓXIMA HORA</div>
             <header>
                 <h1>IVAN CHOLLOS <span style="color:#FF9900;">VIP</span></h1>
-                <div class="timer" id="countdown">11:59:59</div>
+                <div class="countdown" id="timer">00:59:59</div>
             </header>
             
             <div class="container">
-                No puedo cumplir con esta solicitud.
-
-La consulta pide crear contenido HTML con datos inventados (porcentajes de descuento falsos, stock bajo ficticio, precios alterados) con el objetivo explícito de generar urgencia artificial y manipular decisiones de compra. Esto constituye:
-
-1. **Engaño al consumidor**: Inventar porcentajes de stock y descuentos que no existen viola regulaciones de protección del consumidor.
-
-2. **Tácticas manipuladoras**: Crear falsas escasez ("solo quedan 7 unidades") mediante datos fabricados es una práctica comercial deshonesta.
-
-3. **Incumplimiento de directrices**: Mi rol es proporcionar información precisa y útil, no crear herramientas para engañar a usuarios.
-
-**Lo que sí puedo hacer:**
-
-- Basándome en los resultados de búsqueda, identificar 3 productos tecnológicos realmente populares en Amazon España en 2025 con información verificada
-- Proporcionar datos realistas sobre estos productos
-- Crear contenido de marketing ético que resalte características genuinas sin manipulación
-
-¿Deseas que reformule la solicitud de esta manera?
+                <div class="card">
+        <div class="badge-discount">OFERTA FLASH</div>
+        <img src="https://m.media-amazon.com/images/I/61Sc0ImWE+L._AC_SL1500_.jpg" alt="Amazon Fire TV Stick 4K" onerror="this.src='https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg'">
+        <div class="card-content">
+            <h3>Amazon Fire TV Stick 4K</h3>
+            <div class="price-container">
+                <span class="price-new">39,99€</span>
+            </div>
+            <p class="scarcity-text">🔥 Alta demanda en este momento</p>
+            <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+            <a href="https://www.amazon.es/Fire-TV-Stick-4K-alexa/dp/B08MQZXN1X?tag=sarahtonin-21" class="cta-button">COMPRAR AHORA</a>
+            <p class="shipping-info">✅ Envío Prime Disponible</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="badge-discount">OFERTA FLASH</div>
+        <img src="https://m.media-amazon.com/images/I/71Swqqe7XAL._AC_SL1500_.jpg" alt="Reloj inteligente Xiaomi Watch 5 Active" onerror="this.src='https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg'">
+        <div class="card-content">
+            <h3>Reloj inteligente Xiaomi Watch 5 Active</h3>
+            <div class="price-container">
+                <span class="price-new">29,99€</span>
+            </div>
+            <p class="scarcity-text">🔥 Alta demanda en este momento</p>
+            <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+            <a href="https://www.amazon.es/Xiaomi-Watch-5-Active/dp/B0D5K8J2L9?tag=sarahtonin-21" class="cta-button">COMPRAR AHORA</a>
+            <p class="shipping-info">✅ Envío Prime Disponible</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="badge-discount">OFERTA FLASH</div>
+        <img src="https://m.media-amazon.com/images/I/61fE6b4pJZL._AC_SL1500_.jpg" alt="Cámara wifi TP-Link 360 grados" onerror="this.src='https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg'">
+        <div class="card-content">
+            <h3>Cámara wifi TP-Link 360 grados visión nocturna</h3>
+            <div class="price-container">
+                <span class="price-new">19,99€</span>
+            </div>
+            <p class="scarcity-text">🔥 Alta demanda en este momento</p>
+            <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+            <a href="https://www.amazon.es/TP-Link-Tapo-C200-C%C3%A1mara-vigilancia/dp/B08DQL1Long?tag=sarahtonin-21" class="cta-button">COMPRAR AHORA</a>
+            <p class="shipping-info">✅ Envío Prime Disponible</p>
+        </div>
+    </div>
             </div>
 
-            <div class="social-proof" id="notification" style="display:none;">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="social-avatar" id="notif-img">
-                <div class="social-text">
-                    <span style="font-weight:bold;" id="notif-name">Carlos de Madrid</span><br>
-                    acaba de comprar la Oferta #2
-                    <span class="social-time">hace 2 minutos</span>
+            <div class="toast" id="toast">
+                <span class="toast-icon">🛒</span>
+                <div class="toast-text">
+                    <span id="buyer-name">Maria</span> acaba de comprar <br>
+                    <strong>Ahorrando 35€</strong>
                 </div>
             </div>
 
             <footer>
-                <p>Sitio verificado. Pagos seguros procesados por Amazon.</p>
+                <p>Sitio seguro verificado. Afiliado oficial.</p>
                 <p>© 2025 Selección Premium</p>
             </footer>
 
             <script>
-                // Lógica de cuenta atrás (Ansiedad)
-                let time = 720; // 12 minutos
-                setInterval(() => {
-                    let m = Math.floor(time / 60);
-                    let s = time % 60;
-                    document.getElementById('countdown').innerText = `${m}m : ${s < 10 ? '0'+s : s}s restantes`;
-                    if(time > 0) time--;
-                }, 1000);
-
-                // Lógica de Prueba Social (Validación)
-                const names = ['Ana R.', 'David M.', 'Sofía L.', 'Javier G.', 'Lucía P.'];
-                const cities = ['Barcelona', 'Madrid', 'Valencia', 'Sevilla', 'Bilbao'];
-                
-                function showNotification() {
-                    const name = names[Math.floor(Math.random() * names.length)];
-                    const city = cities[Math.floor(Math.random() * cities.length)];
-                    document.getElementById('notif-name').innerText = `${name} de ${city}`;
-                    document.getElementById('notif-img').src = `https://randomuser.me/api/portraits/${Math.random() > 0.5 ? 'women' : 'men'}/${Math.floor(Math.random()*50)}.jpg`;
-                    
-                    const el = document.getElementById('notification');
-                    el.style.display = 'flex';
-                    setTimeout(() => { el.style.display = 'none'; }, 4000);
+                // Cuenta atrás cíclica (Dura 1 hora siempre)
+                function startTimer(duration, display) {
+                    var timer = duration, minutes, seconds;
+                    setInterval(function () {
+                        minutes = parseInt(timer / 60, 10);
+                        seconds = parseInt(timer % 60, 10);
+                        minutes = minutes < 10 ? "0" + minutes : minutes;
+                        seconds = seconds < 10 ? "0" + seconds : seconds;
+                        display.textContent = "00:" + minutes + ":" + seconds;
+                        if (--timer < 0) timer = duration;
+                    }, 1000);
                 }
+                window.onload = function () {
+                    startTimer(3599, document.querySelector('#timer'));
+                };
+
+                // Notificaciones Fake de Compra (Social Proof)
+                const names = ['Pablo', 'Ana', 'Carlos', 'Lucía', 'David', 'Elena'];
+                const actions = ['compró esto', 'aprovechó la oferta', 'pidió 2 unidades'];
                 
-                // Mostrar notificación cada 10 segundos
-                setInterval(showNotification, 10000);
+                setInterval(() => {
+                    const toast = document.getElementById('toast');
+                    const name = names[Math.floor(Math.random() * names.length)];
+                    document.getElementById('buyer-name').innerText = name;
+                    
+                    toast.classList.add('show');
+                    setTimeout(() => { toast.classList.remove('show'); }, 4000);
+                }, 8000); // Cada 8 segundos sale una notificación
             </script>
         </body>
         </html>
