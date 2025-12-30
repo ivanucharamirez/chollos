@@ -1,81 +1,37 @@
 
         <!DOCTYPE html>
-        <html lang="es">
+        <html>
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Iván | Selección Premium</title>
-            <link rel="stylesheet" href="[https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;800&display=swap](https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;800&display=swap)">
+            <title>SYSTEM_OVERRIDE // IVAN</title>
             <style>
-                :root { --bg: #000000; --text: #f5f5f7; --card: #1c1c1e; --accent: #2997ff; }
-                body { font-family: 'SF Pro Display', -apple-system, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; }
-                
-                header { text-align: center; padding: 60px 0 40px; }
-                h1 { font-weight: 800; font-size: 3rem; margin: 0; letter-spacing: -1px; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-                p.subtitle { color: #86868b; font-size: 1.2rem; margin-top: 10px; }
-                
-                .container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-                
-                .product-card { background: var(--card); border-radius: 30px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5); transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
-                .product-card:hover { transform: scale(1.03); }
-                
-                .img-box { height: 300px; background: white; display: flex; align-items: center; justify-content: center; padding: 30px; }
-                img { max-width: 100%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1)); transition: transform 0.3s; }
-                .product-card:hover img { transform: scale(1.05); }
-                
-                .content { padding: 40px; }
-                .label { color: var(--accent); font-weight: 800; letter-spacing: 1px; font-size: 0.8rem; text-transform: uppercase; }
-                h2 { font-size: 1.8rem; margin: 15px 0; line-height: 1.2; height: 2.4em; overflow: hidden; }
-                
-                .price { font-size: 2.5rem; font-weight: 800; display: block; margin-bottom: 30px; }
-                
-                .buy-btn { display: block; background: var(--accent); color: white; text-decoration: none; padding: 18px; border-radius: 18px; text-align: center; font-weight: 600; font-size: 1.1rem; transition: background 0.2s; }
-                .buy-btn:hover { background: #007aff; }
-                
-                footer { text-align: center; padding: 60px; color: #86868b; font-size: 0.9rem; }
+                @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;800&display=swap');
+                body { background: #050505; color: #00ff41; font-family: 'JetBrains+Mono', monospace; margin: 0; overflow-x: hidden; }
+                .terminal-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; pointer-events: none; background: repeating-linear-gradient(0deg, #00ff41 0px, transparent 1px); background-size: 100% 3px; }
+                header { padding: 50px 20px; text-align: center; border-bottom: 1px solid #00ff4133; }
+                .glitch { font-size: 2.5rem; font-weight: 800; text-shadow: 2px 2px #ff003c, -2px -2px #00ff41; animation: glitch 1s infinite; }
+                @keyframes glitch { 0% { transform: translate(0); } 20% { transform: translate(-2px, 2px); } 40% { transform: translate(-2px, -2px); } 60% { transform: translate(2px, 2px); } 80% { transform: translate(2px, -2px); } 100% { transform: translate(0); } }
+                .container { max-width: 1200px; margin: 40px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 20px; }
+                .anomaly-card { background: #0a0a0a; border: 1px solid #00ff4144; padding: 30px; position: relative; overflow: hidden; transition: 0.3s; }
+                .anomaly-card:hover { border-color: #00ff41; box-shadow: 0 0 20px #00ff4133; transform: scale(1.02); }
+                .scanner-line { position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: #00ff41; animation: scan 3s infinite; }
+                @keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
+                h2 { font-size: 1rem; color: #fff; margin: 20px 0; }
+                .price-hex { font-size: 3rem; font-weight: 800; margin: 20px 0; color: #00ff41; text-shadow: 0 0 10px #00ff41aa; }
+                .intercept-btn { display: block; background: #00ff41; color: #000; padding: 15px; text-decoration: none; font-weight: 800; text-align: center; margin-top: 30px; }
+                .intercept-btn:hover { background: #fff; box-shadow: 0 0 30px #ffffffaa; }
+                .data-stream { font-size: 0.7rem; opacity: 0.5; }
             </style>
         </head>
         <body>
+            <div class="terminal-bg"></div>
             <header>
-                <h1>Iván Selection.</h1>
-                <p class="subtitle">Lo mejor de hoy, elegido por IA.</p>
+                <div class="glitch">AMZ_GRID_LEAK_v4.0</div>
+                <p>INTERCEPTANDO ANOMALÍAS DE PRECIO EN TIEMPO REAL</p>
             </header>
-            <div class="container">
-                <div class='product-card'>
-        <div class='img-box'><img src='https://m.media-amazon.com/images/I/61oVNzKQTOL._AC_SL1500_.jpg' loading='lazy'></div>
-        <div class='content'>
-            <span class='label'>OFERTA FLASH</span>
-            <h2>OURA Ring 4 Anillo Inteligente</h2>
-            <div class='pricing'>
-                <span class='price'>279€</span>
-            </div>
-            <a href='https://www.amazon.es/dp/B0D3GGBL9K?tag=sarahtonin-21' target='_blank' class='buy-btn'>VER PRECIO EN AMAZON</a>
-        </div>
-    </div>
-<div class='product-card'>
-        <div class='img-box'><img src='https://m.media-amazon.com/images/I/71neDL1kqZL._AC_SL1500_.jpg' loading='lazy'></div>
-        <div class='content'>
-            <span class='label'>OFERTA FLASH</span>
-            <h2>Meta Quest 3 Gafas VR</h2>
-            <div class='pricing'>
-                <span class='price'>499€</span>
-            </div>
-            <a href='https://www.amazon.es/dp/B0CD4C9GDY?tag=sarahtonin-21' target='_blank' class='buy-btn'>VER PRECIO EN AMAZON</a>
-        </div>
-    </div>
-<div class='product-card'>
-        <div class='img-box'><img src='https://m.media-amazon.com/images/I/61Qfbyx6ABL._AC_SL1000_.jpg' loading='lazy'></div>
-        <div class='content'>
-            <span class='label'>OFERTA FLASH</span>
-            <h2>Echo Show 8 Pantalla Inteligente</h2>
-            <div class='pricing'>
-                <span class='price'>179€</span>
-            </div>
-            <a href='https://www.amazon.es/dp/B0D9P97GY6?tag=sarahtonin-21' target='_blank' class='buy-btn'>VER PRECIO EN AMAZON</a>
-        </div>
-    </div>
-            </div>
-            <footer>Actualizado automáticamente. Afiliado de Amazon.</footer>
+            <div class="container"></div>
+            <footer>[ Sincronización activa: Raspberry_Pi_3B ]</footer>
         </body>
         </html>
         
