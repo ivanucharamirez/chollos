@@ -4,44 +4,78 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Iván Chollos | Premium Selection</title>
+            <title>Iván | Selección Premium</title>
+            <link rel="stylesheet" href="[https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;800&display=swap](https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;800&display=swap)">
             <style>
-                body { font-family: 'Inter', -apple-system, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }
-                header { text-align: center; padding: 40px 0; }
-                h1 { font-weight: 800; font-size: 2.5rem; color: #1a1a1a; margin: 0; }
-                .container { max-width: 1100px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-                .card { background: white; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.04); transition: 0.3s; border: 1px solid #eee; }
-                .card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
-                img { width: 100%; height: 250px; object-fit: contain; background: #fff; }
-                .info { padding: 30px; text-align: center; }
-                .brand { font-size: 0.7rem; font-weight: 700; color: #ff4f00; text-transform: uppercase; letter-spacing: 1.5px; }
-                h2 { font-size: 1.3rem; margin: 15px 0; color: #1a1a1a; height: 3rem; overflow: hidden; }
-                .price { font-size: 2.2rem; font-weight: 800; color: #1a1a1a; margin-bottom: 25px; }
-                .btn { display: block; background: #1a1a1a; color: white; padding: 18px; border-radius: 14px; text-decoration: none; font-weight: 700; transition: 0.3s; }
-                .btn:hover { background: #444; }
-                footer { text-align: center; padding: 60px; color: #999; font-size: 0.8rem; }
+                :root { --bg: #000000; --text: #f5f5f7; --card: #1c1c1e; --accent: #2997ff; }
+                body { font-family: 'SF Pro Display', -apple-system, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; }
+                
+                header { text-align: center; padding: 60px 0 40px; }
+                h1 { font-weight: 800; font-size: 3rem; margin: 0; letter-spacing: -1px; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+                p.subtitle { color: #86868b; font-size: 1.2rem; margin-top: 10px; }
+                
+                .container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+                
+                .product-card { background: var(--card); border-radius: 30px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5); transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+                .product-card:hover { transform: scale(1.03); }
+                
+                .img-box { height: 300px; background: white; display: flex; align-items: center; justify-content: center; padding: 30px; }
+                img { max-width: 100%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1)); transition: transform 0.3s; }
+                .product-card:hover img { transform: scale(1.05); }
+                
+                .content { padding: 40px; }
+                .label { color: var(--accent); font-weight: 800; letter-spacing: 1px; font-size: 0.8rem; text-transform: uppercase; }
+                h2 { font-size: 1.8rem; margin: 15px 0; line-height: 1.2; height: 2.4em; overflow: hidden; }
+                
+                .price { font-size: 2.5rem; font-weight: 800; display: block; margin-bottom: 30px; }
+                
+                .buy-btn { display: block; background: var(--accent); color: white; text-decoration: none; padding: 18px; border-radius: 18px; text-align: center; font-weight: 600; font-size: 1.1rem; transition: background 0.2s; }
+                .buy-btn:hover { background: #007aff; }
+                
+                footer { text-align: center; padding: 60px; color: #86868b; font-size: 0.9rem; }
             </style>
         </head>
         <body>
-            <header><h1>Iván Chollos</h1><p>Selección exclusiva de hoy</p></header>
-            <div class="container">No puedo generar HTML con URLs reales de Amazon.es que funcionen actualmente por las siguientes razones:
-
-1. **No tengo acceso a URLs actuales**: Los resultados de búsqueda proporcionados contienen información del 29 de diciembre, pero no incluyen enlaces directos funcionales a los productos específicos en Amazon.es.
-
-2. **No puedo verificar disponibilidad en tiempo real**: Hoy es 30 de diciembre de 2025, y las ofertas mencionadas en los resultados pueden haber expirado o cambiar sin previo aviso.
-
-3. **Restricciones en mi diseño**: No puedo generar URLs de Amazon que no estén explícitamente verificadas en las fuentes proporcionadas, ni puedo acceder a Amazon.es directamente para obtener enlaces actuales.
-
-**Lo que sí puedo ofrecerte de los resultados disponibles:**
-
-Según los datos del 29 de diciembre, las 3 ofertas más potentes mencionadas fueron:
-
-- **Philips Series 5000** - 49,99€ (afeitadora corporal impermeable)
-- **Xiaomi Scooter 5 Max** - 419,99€ (patinete eléctrico con 1000W)
-- **Philips Ambilight 'The One'** - 699€ (TV 65" 4K QLED con 144Hz)
-
-Para obtener los enlaces reales y actualizados, te recomiendo acceder directamente a Amazon.es y buscar estos productos por su nombre exacto, o consultar artículos de ofertas más recientes (ya que hoy es 30 de diciembre).</div>
-            <footer>Actualizado automáticamente cada hora por Raspberry Pi 3B</footer>
+            <header>
+                <h1>Iván Selection.</h1>
+                <p class="subtitle">Lo mejor de hoy, elegido por IA.</p>
+            </header>
+            <div class="container">
+                <div class='product-card'>
+        <div class='img-box'><img src='https://m.media-amazon.com/images/I/61oVNzKQTOL._AC_SL1500_.jpg' loading='lazy'></div>
+        <div class='content'>
+            <span class='label'>OFERTA FLASH</span>
+            <h2>OURA Ring 4 Anillo Inteligente</h2>
+            <div class='pricing'>
+                <span class='price'>279€</span>
+            </div>
+            <a href='https://www.amazon.es/dp/B0D3GGBL9K?tag=sarahtonin-21' target='_blank' class='buy-btn'>VER PRECIO EN AMAZON</a>
+        </div>
+    </div>
+<div class='product-card'>
+        <div class='img-box'><img src='https://m.media-amazon.com/images/I/71neDL1kqZL._AC_SL1500_.jpg' loading='lazy'></div>
+        <div class='content'>
+            <span class='label'>OFERTA FLASH</span>
+            <h2>Meta Quest 3 Gafas VR</h2>
+            <div class='pricing'>
+                <span class='price'>499€</span>
+            </div>
+            <a href='https://www.amazon.es/dp/B0CD4C9GDY?tag=sarahtonin-21' target='_blank' class='buy-btn'>VER PRECIO EN AMAZON</a>
+        </div>
+    </div>
+<div class='product-card'>
+        <div class='img-box'><img src='https://m.media-amazon.com/images/I/61Qfbyx6ABL._AC_SL1000_.jpg' loading='lazy'></div>
+        <div class='content'>
+            <span class='label'>OFERTA FLASH</span>
+            <h2>Echo Show 8 Pantalla Inteligente</h2>
+            <div class='pricing'>
+                <span class='price'>179€</span>
+            </div>
+            <a href='https://www.amazon.es/dp/B0D9P97GY6?tag=sarahtonin-21' target='_blank' class='buy-btn'>VER PRECIO EN AMAZON</a>
+        </div>
+    </div>
+            </div>
+            <footer>Actualizado automáticamente. Afiliado de Amazon.</footer>
         </body>
         </html>
         
