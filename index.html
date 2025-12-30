@@ -2,151 +2,32 @@
         <!DOCTYPE html>
         <html lang="es">
         <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>⚡ OFERTAS LÍMITE | Amazon Deals</title>
-            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+            <meta charset="UTF-8"><title>QCMO // TERMINAL</title>
             <style>
-                :root { --primary: #FF9900; --accent: #D32F2F; --dark: #131921; }
-                body { font-family: 'Poppins', sans-serif; background-color: #f0f2f5; margin: 0; padding: 0; }
-                
-                /* BARRA SUPERIOR DE URGENCIA */
-                .urgency-bar { background: var(--accent); color: white; text-align: center; padding: 8px; font-weight: bold; font-size: 0.9rem; animation: flash 2s infinite; }
-                @keyframes flash { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
-                
-                header { background: var(--dark); padding: 20px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-                h1 { margin: 0; font-style: italic; letter-spacing: 1px; }
-                .countdown { color: #FF9900; font-size: 1.4rem; font-weight: 800; margin-top: 5px; }
-
-                .container { max-width: 900px; margin: 20px auto; padding: 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-                
-                /* TARJETA DE PRODUCTO */
-                .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); position: relative; border: 1px solid #e0e0e0; transition: transform 0.2s; }
-                .card:hover { transform: scale(1.02); border-color: var(--primary); }
-                
-                .badge-discount { position: absolute; top: 10px; left: 0; background: var(--accent); color: white; padding: 4px 12px; font-weight: 800; font-size: 0.8rem; box-shadow: 2px 2px 5px rgba(0,0,0,0.2); }
-                
-                img { width: 100%; height: 220px; object-fit: contain; padding: 20px; background: white; border-bottom: 1px solid #f0f0f0; }
-                
-                .card-content { padding: 15px; text-align: center; }
-                h3 { margin: 0 0 10px; font-size: 1rem; color: #333; line-height: 1.4; height: 2.8em; overflow: hidden; }
-                
-                .price-new { color: #B12704; font-size: 1.8rem; font-weight: 800; display: block; margin-bottom: 10px; }
-                
-                .scarcity-text { color: #D32F2F; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; text-align: left; }
-                .progress-bar { width: 100%; height: 6px; background: #eee; border-radius: 3px; margin-bottom: 15px; overflow: hidden; }
-                .progress-fill { height: 100%; background: linear-gradient(90deg, #ff9900, #ff4444); }
-                
-                .cta-button { display: block; width: 100%; padding: 12px 0; background: #FFD814; border: 1px solid #FCD200; border-radius: 8px; color: #111; font-weight: bold; text-decoration: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1); animation: pulse 2s infinite; }
-                @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 216, 20, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(0,0,0,0); } 100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); } }
-                
-                .shipping-info { margin-top: 10px; font-size: 0.75rem; color: #007600; font-weight: 600; }
-                
-                /* NOTIFICACIÓN SOCIAL (JS) */
-                .toast { position: fixed; bottom: 20px; left: 20px; background: white; padding: 12px 20px; border-radius: 50px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 10px; z-index: 99; transform: translateY(150%); transition: transform 0.5s; border: 1px solid #eee; }
-                .toast.show { transform: translateY(0); }
-                .toast-icon { font-size: 1.2rem; }
-                .toast-text { font-size: 0.8rem; color: #333; }
-                .toast-text strong { color: var(--accent); }
-
-                footer { text-align: center; padding: 30px; color: #888; font-size: 0.8rem; }
+                @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;800&display=swap');
+                body { background: #010101; color: #00ff41; font-family: 'JetBrains Mono', monospace; margin: 0; padding: 20px; }
+                .node-header { border-bottom: 2px solid #00ff41; padding: 20px; margin-bottom: 40px; }
+                .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; max-width: 1200px; margin: auto; }
+                .quantum-card { background: #000; border: 1px solid #00ff4144; padding: 20px; position: relative; overflow: hidden; }
+                .quantum-card:hover { border-color: #00ff41; box-shadow: 0 0 20px #00ff4122; }
+                .glitch-text { font-size: 0.6rem; background: #00ff41; color: #000; padding: 2px 5px; font-weight: 800; display: inline-block; }
+                .img-container { background: #fff; height: 180px; margin: 15px 0; display: flex; align-items: center; justify-content: center; border-radius: 2px; }
+                img { max-height: 100%; max-width: 100%; }
+                h3 { font-size: 0.9rem; color: #fff; margin: 10px 0; height: 3em; overflow: hidden; }
+                .price-grid { display: flex; justify-content: space-between; align-items: center; margin: 20px 0; }
+                .old-val { color: #444; text-decoration: line-through; font-size: 0.8rem; }
+                .new-val { font-size: 2rem; font-weight: 800; }
+                .profit-alert { color: #ff0055; font-size: 0.7rem; font-weight: 800; margin-bottom: 20px; border-left: 2px solid #ff0055; padding-left: 10px; }
+                .capture-btn { display: block; background: #00ff41; color: #000; text-align: center; padding: 15px; text-decoration: none; font-weight: 800; transition: 0.3s; }
+                .capture-btn:hover { background: #fff; }
+                footer { text-align: center; margin-top: 50px; font-size: 0.6rem; opacity: 0.3; }
             </style>
         </head>
         <body>
-            <div class="urgency-bar">⚠️ ATENCIÓN: PRECIOS VÁLIDOS SOLO DURANTE LA PRÓXIMA HORA</div>
-            <header>
-                <h1>IVAN CHOLLOS <span style="color:#FF9900;">VIP</span></h1>
-                <div class="countdown" id="timer">00:59:59</div>
-            </header>
-            
-            <div class="container">
-                <div class="card">
-    <div class="badge-discount">OFERTA FLASH</div>
-    <img src="https://m.media-amazon.com/images/I/61SC8uxdKCL._AC_SY300_SX300_.jpg" alt="Amazon Fire TV Stick 4K" onerror="this.src='https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg'">
-    <div class="card-content">
-        <h3>Amazon Fire TV Stick 4K</h3>
-        <div class="price-container">
-            <span class="price-new">39,99€</span>
-        </div>
-        <p class="scarcity-text">🔥 Alta demanda en este momento</p>
-        <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
-        <a href="https://www.amazon.es/dp/B08XY388HX?tag=sarahtonin-21" class="cta-button">COMPRAR AHORA</a>
-        <p class="shipping-info">✅ Envío Prime Disponible</p>
-    </div>
-</div>
-<div class="card">
-    <div class="badge-discount">OFERTA FLASH</div>
-    <img src="https://m.media-amazon.com/images/I/61vDO26q8ML._AC_SY300_SX300_.jpg" alt="Cámara TP-Link Tapo C210" onerror="this.src='https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg'">
-    <div class="card-content">
-        <h3>Cámara TP-Link Tapo C210</h3>
-        <div class="price-container">
-            <span class="price-new">19,99€</span>
-        </div>
-        <p class="scarcity-text">🔥 Alta demanda en este momento</p>
-        <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
-        <a href="https://www.amazon.es/dp/B09P8WN3XS?tag=sarahtonin-21" class="cta-button">COMPRAR AHORA</a>
-        <p class="shipping-info">✅ Envío Prime Disponible</p>
-    </div>
-</div>
-<div class="card">
-    <div class="badge-discount">OFERTA FLASH</div>
-    <img src="https://m.media-amazon.com/images/I/71Swqqe7XAL._AC_SY300_SX300_.jpg" alt="Echo Dot" onerror="this.src='https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg'">
-    <div class="card-content">
-        <h3>Amazon Echo Dot</h3>
-        <div class="price-container">
-            <span class="price-new">49,99€</span>
-        </div>
-        <p class="scarcity-text">🔥 Alta demanda en este momento</p>
-        <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
-        <a href="https://www.amazon.es/dp/B09B8V1LZ3?tag=sarahtonin-21" class="cta-button">COMPRAR AHORA</a>
-        <p class="shipping-info">✅ Envío Prime Disponible</p>
-    </div>
-</div>
+            <div class="node-header">
+                <h1>SYSTEM://QUANTUM_COGNITIVE_MEV_ORGANISM</h1>
+                <p>NODO_EXTRACCIÓN: 0x01A9551e0e12A62c3477D6fE46Ee3beD6D66cF25</p>
             </div>
-
-            <div class="toast" id="toast">
-                <span class="toast-icon">🛒</span>
-                <div class="toast-text">
-                    <span id="buyer-name">Maria</span> acaba de comprar <br>
-                    <strong>Ahorrando 35€</strong>
-                </div>
-            </div>
-
-            <footer>
-                <p>Sitio seguro verificado. Afiliado oficial.</p>
-                <p>© 2025 Selección Premium</p>
-            </footer>
-
-            <script>
-                // Cuenta atrás cíclica (Dura 1 hora siempre)
-                function startTimer(duration, display) {
-                    var timer = duration, minutes, seconds;
-                    setInterval(function () {
-                        minutes = parseInt(timer / 60, 10);
-                        seconds = parseInt(timer % 60, 10);
-                        minutes = minutes < 10 ? "0" + minutes : minutes;
-                        seconds = seconds < 10 ? "0" + seconds : seconds;
-                        display.textContent = "00:" + minutes + ":" + seconds;
-                        if (--timer < 0) timer = duration;
-                    }, 1000);
-                }
-                window.onload = function () {
-                    startTimer(3599, document.querySelector('#timer'));
-                };
-
-                // Notificaciones Fake de Compra (Social Proof)
-                const names = ['Pablo', 'Ana', 'Carlos', 'Lucía', 'David', 'Elena'];
-                const actions = ['compró esto', 'aprovechó la oferta', 'pidió 2 unidades'];
-                
-                setInterval(() => {
-                    const toast = document.getElementById('toast');
-                    const name = names[Math.floor(Math.random() * names.length)];
-                    document.getElementById('buyer-name').innerText = name;
-                    
-                    toast.classList.add('show');
-                    setTimeout(() => { toast.classList.remove('show'); }, 4000);
-                }, 8000); // Cada 8 segundos sale una notificación
-            </script>
-        </body>
-        </html>
-        
+            <div class="grid"></div>
+            <footer>RECURSIVE_EVOLUTION_ACTIVE // RASPBERRY_PI_3B_NODE</footer>
+        </body></html>
