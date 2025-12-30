@@ -4,83 +4,78 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>IVÁN | INSIDER SELECTION</title>
+            <title>IVÁN | MERCADO PRIVADO</title>
             <style>
-                :root { --main: #000; --accent: #c5a059; --bg: #fafafa; --text: #111; }
-                body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); margin: 0; padding: 20px; color: var(--text); }
-                .wrapper { max-width: 1200px; margin: auto; }
-                header { text-align: center; padding: 60px 0; }
-                header h1 { font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 10px; }
-                header h2 { font-size: 2.5rem; font-weight: 800; margin: 0; color: var(--main); }
+                :root { --bg: #0a0a0a; --card-bg: #141414; --text: #ffffff; --accent: #00f2ff; }
+                body { font-family: 'Inter', -apple-system, monospace; background: var(--bg); color: var(--text); margin: 0; padding: 20px; }
+                .container { max-width: 1000px; margin: 40px auto; }
                 
-                .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-                .opportunity-card { background: white; border-radius: 2px; padding: 40px; border: 1px solid #eee; position: relative; transition: 0.4s; }
-                .opportunity-card:hover { box-shadow: 0 30px 60px rgba(0,0,0,0.05); transform: translateY(-5px); }
+                header { border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 40px; }
+                h1 { font-weight: 800; letter-spacing: -1px; margin: 0; text-transform: uppercase; font-size: 1.5rem; }
+                h1 span { color: var(--accent); }
+                p.sub { color: #666; font-size: 0.9rem; margin-top: 5px; font-family: monospace; }
                 
-                .saving-badge { position: absolute; top: 20px; right: 20px; background: var(--main); color: white; padding: 5px 12px; font-size: 0.7rem; font-weight: bold; }
-                .image-wrap { height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; }
-                .image-wrap img { max-height: 100%; mix-blend-mode: multiply; }
+                .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
                 
-                .stock-status { color: #27ae60; font-size: 0.6rem; font-weight: bold; display: block; margin-bottom: 10px; }
-                h3 { font-size: 1.1rem; font-weight: 600; margin: 0 0 20px; line-height: 1.4; color: #333; height: 3em; overflow: hidden; }
+                .card { background: var(--card-bg); border: 1px solid #222; border-radius: 16px; overflow: hidden; transition: 0.3s; }
+                .card:hover { border-color: var(--accent); box-shadow: 0 0 30px rgba(0, 242, 255, 0.1); }
                 
-                .price-row { display: flex; align-items: baseline; gap: 15px; margin-bottom: 30px; border-top: 1px solid #f5f5f5; padding-top: 20px; }
-                .old-price { text-decoration: line-through; color: #999; font-size: 1rem; }
-                .new-price { font-size: 2rem; font-weight: 800; color: var(--main); }
+                .img-container { height: 220px; background: #1a1a1a; display: flex; align-items: center; justify-content: center; padding: 20px; border-bottom: 1px solid #222; }
+                img { max-height: 100%; max-width: 100%; object-fit: contain; filter: grayscale(30%); transition: 0.3s; }
+                .card:hover img { filter: grayscale(0%); transform: scale(1.05); }
                 
-                .action-btn { display: block; background: var(--main); color: white; text-align: center; padding: 18px; text-decoration: none; font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s; }
-                .action-btn:hover { background: var(--accent); }
+                .info { padding: 25px; }
+                .status { color: var(--accent); font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; }
+                h3 { font-size: 1.1rem; margin: 10px 0; height: 3em; overflow: hidden; color: #ddd; }
+                .price { font-size: 2rem; font-weight: 800; margin: 20px 0; color: #fff; }
                 
-                footer { text-align: center; padding: 100px 0 50px; color: #ccc; font-size: 0.7rem; letter-spacing: 1px; }
+                .buy-btn { display: block; background: transparent; color: var(--accent); border: 2px solid var(--accent); padding: 15px; text-align: center; text-decoration: none; font-weight: 800; border-radius: 8px; transition: 0.3s; }
+                .buy-btn:hover { background: var(--accent); color: #000; }
+                
+                footer { margin-top: 60px; text-align: center; color: #444; font-size: 0.8rem; font-family: monospace; }
             </style>
         </head>
         <body>
-            <div class="wrapper">
+            <div class="container">
                 <header>
-                    <h1>Private Access Only</h1>
-                    <h2>Oportunidades de Arbitraje</h2>
+                    <h1>IVÁN <span>//</span> PROTOCOLO DE OFERTAS</h1>
+                    <p class="sub">CONEXIÓN SEGURA ESTABLECIDA CON AMAZON.ES</p>
                 </header>
                 <div class="grid">
-                <div class="opportunity-card">
-                    <div class="saving-badge">AHORRAS 80.00€</div>
-                    <div class="image-wrap"><img src="https://ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetImage&MarketPlace=ES&ASIN=B09W2TBN2Q"></div>
+                <div class="card">
+                    <div class="img-container">
+                        <img src="[https://images-na.ssl-images-amazon.com/images/P/](https://images-na.ssl-images-amazon.com/images/P/)B08XY388XQ.01._SCLZZZZZZZ_.jpg" onerror="this.onerror=null;this.src='https://m.media-amazon.com/images/G/30/social_share/amazon_logo._CB633267299_.png';">
+                    </div>
                     <div class="info">
-                        <span class="stock-status">● VERIFICADO HACE 2 MIN</span>
-                        <h3>Samsung Galaxy Buds2 Pro...</h3>
-                        <div class="price-row">
-                            <span class="old-price">179€€</span>
-                            <span class="new-price">99€€</span>
-                        </div>
-                        <a href="https://www.amazon.es/dp/B09W2TBN2Q?tag=sarahtonin-21" target="_blank" class="action-btn">APROVECHAR OPORTUNIDAD</a>
+                        <span class="status">VERIFICADO POR SISTEMA</span>
+                        <h3>Fire TV Stick 4K...</h3>
+                        <div class="price">39.99€</div>
+                        <a href="[https://www.amazon.es/dp/](https://www.amazon.es/dp/)B08XY388XQ?tag=sarahtonin-21" target="_blank" class="buy-btn">ACCEDER A LA OFERTA</a>
                     </div>
                 </div>
-                <div class="opportunity-card">
-                    <div class="saving-badge">AHORRAS 90.00€</div>
-                    <div class="image-wrap"><img src="https://ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetImage&MarketPlace=ES&ASIN=B0CHX1W1XY"></div>
+                <div class="card">
+                    <div class="img-container">
+                        <img src="[https://images-na.ssl-images-amazon.com/images/P/](https://images-na.ssl-images-amazon.com/images/P/)B0D9P38Y4K.01._SCLZZZZZZZ_.jpg" onerror="this.onerror=null;this.src='https://m.media-amazon.com/images/G/30/social_share/amazon_logo._CB633267299_.png';">
+                    </div>
                     <div class="info">
-                        <span class="stock-status">● VERIFICADO HACE 2 MIN</span>
-                        <h3>Apple AirPods Pro 2...</h3>
-                        <div class="price-row">
-                            <span class="old-price">289€€</span>
-                            <span class="new-price">199€€</span>
-                        </div>
-                        <a href="https://www.amazon.es/dp/B0CHX1W1XY?tag=sarahtonin-21" target="_blank" class="action-btn">APROVECHAR OPORTUNIDAD</a>
+                        <span class="status">VERIFICADO POR SISTEMA</span>
+                        <h3>Amazfit Bip 6...</h3>
+                        <div class="price">49.99€</div>
+                        <a href="[https://www.amazon.es/dp/](https://www.amazon.es/dp/)B0D9P38Y4K?tag=sarahtonin-21" target="_blank" class="buy-btn">ACCEDER A LA OFERTA</a>
                     </div>
                 </div>
-                <div class="opportunity-card">
-                    <div class="saving-badge">AHORRAS 30.00€</div>
-                    <div class="image-wrap"><img src="https://ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetImage&MarketPlace=ES&ASIN=B09B8V1LZ1"></div>
+                <div class="card">
+                    <div class="img-container">
+                        <img src="[https://images-na.ssl-images-amazon.com/images/P/](https://images-na.ssl-images-amazon.com/images/P/)B0D9P38Y4K.01._SCLZZZZZZZ_.jpg" onerror="this.onerror=null;this.src='https://m.media-amazon.com/images/G/30/social_share/amazon_logo._CB633267299_.png';">
+                    </div>
                     <div class="info">
-                        <span class="stock-status">● VERIFICADO HACE 2 MIN</span>
-                        <h3>Echo Dot 5ª Gen...</h3>
-                        <div class="price-row">
-                            <span class="old-price">59,99€€</span>
-                            <span class="new-price">29,99€€</span>
-                        </div>
-                        <a href="https://www.amazon.es/dp/B09B8V1LZ1?tag=sarahtonin-21" target="_blank" class="action-btn">APROVECHAR OPORTUNIDAD</a>
+                        <span class="status">VERIFICADO POR SISTEMA</span>
+                        <h3>Reloj Xiaomi Watch 5 Active...</h3>
+                        <div class="price">29.99€</div>
+                        <a href="[https://www.amazon.es/dp/](https://www.amazon.es/dp/)B0D9P38Y4K?tag=sarahtonin-21" target="_blank" class="buy-btn">ACCEDER A LA OFERTA</a>
                     </div>
                 </div></div>
-                <footer>SISTEMA AUTOMATIZADO POR RASPBERRY PI 3B // IVÁN RAMÍREZ EXCLUSIVE</footer>
+                <footer>SISTEMA AUTOMATIZADO V5.0 | ID DE OPERADOR: sarahtonin-21</footer>
             </div>
         </body>
         </html>
