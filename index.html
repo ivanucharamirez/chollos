@@ -1,29 +1,57 @@
 
         <!DOCTYPE html>
-        <html>
+        <html lang="es">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Acceso Directo a Ofertas Amazon</title>
+            <title>Iván Chollos | Premium Selection</title>
             <style>
-                body { font-family: -apple-system, sans-serif; background: #f4f4f7; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-                .container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; max-width: 400px; width: 90%; }
-                h1 { font-size: 1.2rem; color: #333; margin-bottom: 20px; }
-                ul { list-style: none; padding: 0; }
-                li { margin-bottom: 15px; }
-                a { display: block; background: #232f3e; color: white; padding: 15px; text-decoration: none; border-radius: 12px; font-weight: bold; transition: 0.2s; }
-                a:hover { background: #37475a; transform: scale(1.02); }
-                .footer { margin-top: 20px; font-size: 0.7rem; color: #888; }
+                body { font-family: 'Inter', -apple-system, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; }
+                header { text-align: center; padding: 40px 0; }
+                h1 { font-weight: 800; font-size: 2.5rem; color: #1a1a1a; margin: 0; }
+                .container { max-width: 1100px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+                .card { background: white; border-radius: 24px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.04); transition: 0.3s; border: 1px solid #eee; }
+                .card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+                img { width: 100%; height: 250px; object-fit: contain; background: #fff; }
+                .info { padding: 30px; text-align: center; }
+                .brand { font-size: 0.7rem; font-weight: 700; color: #ff4f00; text-transform: uppercase; letter-spacing: 1.5px; }
+                h2 { font-size: 1.3rem; margin: 15px 0; color: #1a1a1a; height: 3rem; overflow: hidden; }
+                .price { font-size: 2.2rem; font-weight: 800; color: #1a1a1a; margin-bottom: 25px; }
+                .btn { display: block; background: #1a1a1a; color: white; padding: 18px; border-radius: 14px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+                .btn:hover { background: #444; }
+                footer { text-align: center; padding: 60px; color: #999; font-size: 0.8rem; }
             </style>
         </head>
         <body>
-            <div class="container">
-                <h1>⚡ Chollos Verificados</h1>
-                <ul><li><a href='https://www.amazon.es/dp/B0CJVY8L1G?tag=sarahtonin-21'>Cepillo de dientes eléctrico Oral-B</a></li>
-<li><a href='https://www.amazon.es/dp/B0B5J6N2N7?tag=sarahtonin-21'>Recortadora Philips 12 en 1</a></li>
-<li><a href='https://www.amazon.es/dp/B0C6Y6K6K6?tag=sarahtonin-21'>Despertador inteligente Echo Pop</a></li></ul>
-                <div class="footer">Serás redirigido a la ficha oficial de Amazon.es</div>
-            </div>
+            <header><h1>Iván Chollos</h1><p>Selección exclusiva de hoy</p></header>
+            <div class="container"><div class='card'>
+        <img src='https://m.media-amazon.com/images/I/71Swqqe7XAL._AC_SL1500_.jpg' alt='Amazon Fire TV Stick 4K Max'>
+        <div class='info'>
+            <span class='brand'>RECOMENDADO</span>
+            <h2>Amazon Fire TV Stick 4K Max</h2>
+            <div class='price'>Precio rebajado</div>
+            <a href='https://www.amazon.es/Fire-TV-Stick-4K-Max/dp/B08XY388HX?tag=sarahtonin-21' class='btn'>COMPRAR AHORA</a>
+        </div>
+    </div>
+    <div class='card'>
+        <img src='https://m.media-amazon.com/images/I/81qQdkNigKL._AC_SL1500_.jpg' alt='Baliza V16 EXTRASTAR'>
+        <div class='info'>
+            <span class='brand'>RECOMENDADO</span>
+            <h2>Baliza V16 EXTRASTAR DGT</h2>
+            <div class='price'>76,99€</div>
+            <a href='https://www.amazon.es/EXTRASTAR-Baliza-Homologada-Geolocalizaci%C3%B3n-Plataforma/dp/B0D9MYR2G2?tag=sarahtonin-21' class='btn'>COMPRAR AHORA</a>
+        </div>
+    </div>
+    <div class='card'>
+        <img src='https://m.media-amazon.com/images/I/71f4cWSLxyL._AC_SL1500_.jpg' alt='Chaqueta Helly Hansen Seven J'>
+        <div class='info'>
+            <span class='brand'>RECOMENDADO</span>
+            <h2>Helly Hansen Seven J Impermeable</h2>
+            <div class='price'>64,99€</div>
+            <a href='https://www.amazon.es/Helly-Hansen-Seven-Jchaqueta/dp/B0B5Y5ZJ3K?tag=sarahtonin-21' class='btn'>COMPRAR AHORA</a>
+        </div>
+    </div></div>
+            <footer>Actualizado automáticamente cada hora por Raspberry Pi 3B</footer>
         </body>
         </html>
         
