@@ -1,64 +1,37 @@
 
         <!DOCTYPE html>
-        <html>
+        <html lang="es">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>SYSTEM_OVERRIDE // IVAN</title>
+            <title>TERMINAL_ARBITRAJE_V1</title>
             <style>
-                @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;800&display=swap');
-                body { background: #050505; color: #00ff41; font-family: 'JetBrains+Mono', monospace; margin: 0; overflow-x: hidden; }
-                .terminal-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; pointer-events: none; background: repeating-linear-gradient(0deg, #00ff41 0px, transparent 1px); background-size: 100% 3px; }
-                header { padding: 50px 20px; text-align: center; border-bottom: 1px solid #00ff4133; }
-                .glitch { font-size: 2.5rem; font-weight: 800; text-shadow: 2px 2px #ff003c, -2px -2px #00ff41; animation: glitch 1s infinite; }
-                @keyframes glitch { 0% { transform: translate(0); } 20% { transform: translate(-2px, 2px); } 40% { transform: translate(-2px, -2px); } 60% { transform: translate(2px, 2px); } 80% { transform: translate(2px, -2px); } 100% { transform: translate(0); } }
-                .container { max-width: 1200px; margin: 40px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 20px; }
-                .anomaly-card { background: #0a0a0a; border: 1px solid #00ff4144; padding: 30px; position: relative; overflow: hidden; transition: 0.3s; }
-                .anomaly-card:hover { border-color: #00ff41; box-shadow: 0 0 20px #00ff4133; transform: scale(1.02); }
-                .scanner-line { position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: #00ff41; animation: scan 3s infinite; }
-                @keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
-                h2 { font-size: 1rem; color: #fff; margin: 20px 0; }
-                .price-hex { font-size: 3rem; font-weight: 800; margin: 20px 0; color: #00ff41; text-shadow: 0 0 10px #00ff41aa; }
-                .intercept-btn { display: block; background: #00ff41; color: #000; padding: 15px; text-decoration: none; font-weight: 800; text-align: center; margin-top: 30px; }
-                .intercept-btn:hover { background: #fff; box-shadow: 0 0 30px #ffffffaa; }
-                .data-stream { font-size: 0.7rem; opacity: 0.5; }
+                body { background: #0a0a0b; color: #e0e0e0; font-family: 'Courier New', monospace; margin: 0; padding: 20px; }
+                .terminal { max-width: 800px; margin: auto; border: 1px solid #333; background: #000; padding: 20px; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+                header { border-bottom: 2px solid #222; padding-bottom: 20px; margin-bottom: 30px; }
+                h1 { color: #fff; font-size: 1.2rem; margin: 0; letter-spacing: 2px; }
+                .data-row { display: flex; align-items: center; border-bottom: 1px solid #111; padding: 20px 0; gap: 20px; }
+                .status-blink { color: #00ff00; font-size: 0.7rem; font-weight: bold; animation: blink 1s infinite; }
+                @keyframes blink { 0%{opacity:0;} 50%{opacity:1;} 100%{opacity:0;} }
+                .product-info { flex-grow: 1; }
+                .asin { color: #555; font-size: 0.7rem; }
+                h3 { margin: 5px 0; font-size: 1rem; color: #aaa; }
+                .price-action { text-align: right; }
+                .value { font-size: 1.8rem; font-weight: bold; color: #fff; margin-bottom: 10px; }
+                .buy-link { background: #fff; color: #000; padding: 10px 20px; text-decoration: none; font-weight: bold; font-size: 0.8rem; border-radius: 2px; transition: 0.3s; }
+                .buy-link:hover { background: #00ff00; }
+                footer { margin-top: 40px; font-size: 0.7rem; color: #333; text-align: center; }
             </style>
         </head>
         <body>
-            <div class="terminal-bg"></div>
-            <header>
-                <div class="glitch">AMZ_GRID_LEAK_v4.0</div>
-                <p>INTERCEPTANDO ANOMALÍAS DE PRECIO EN TIEMPO REAL</p>
-            </header>
-            <div class="container">
-    <div class="anomaly-card">
-        <div class="scanner-line"></div>
-        <div class="data-stream">DETECCION_ESTABLE</div>
-        <h2>Columbia Fast Trek II Full Zip...</h2>
-        <div class="price-hex">36€€</div>
-        <div class="asin-code">REF_ID: B0B5Y5ZJ2K</div>
-        <a href="https://www.amazon.es/dp/B0B5Y5ZJ2K?tag=sarahtonin-21" class="intercept-btn">INTERCEPTAR OFERTA</a>
-    </div>
-    
-    <div class="anomaly-card">
-        <div class="scanner-line"></div>
-        <div class="data-stream">DETECCION_ESTABLE</div>
-        <h2>Altavoz portátil...</h2>
-        <div class="price-hex">39,99€€</div>
-        <div class="asin-code">REF_ID: B0CXYZ1234</div>
-        <a href="https://www.amazon.es/dp/B0CXYZ1234?tag=sarahtonin-21" class="intercept-btn">INTERCEPTAR OFERTA</a>
-    </div>
-    
-    <div class="anomaly-card">
-        <div class="scanner-line"></div>
-        <div class="data-stream">DETECCION_ESTABLE</div>
-        <h2>Calefactor de bajo consumo Rowenta...</h2>
-        <div class="price-hex">39€€</div>
-        <div class="asin-code">REF_ID: B08N5W2Q3R</div>
-        <a href="https://www.amazon.es/dp/B08N5W2Q3R?tag=sarahtonin-21" class="intercept-btn">INTERCEPTAR OFERTA</a>
-    </div>
-    </div>
-            <footer>[ Sincronización activa: Raspberry_Pi_3B ]</footer>
+            <div class="terminal">
+                <header>
+                    <h1>TERMINAL DE ARBITRAJE // IVÁN_RAMÍREZ</h1>
+                    <p style="font-size:0.7rem; color:#444;">ESCANEANDO AMAZON_ES_NODES... [ESTADO: OK]</p>
+                </header>
+                <div class="results"></div>
+                <footer>SISTEMA DE AFILIACIÓN ACTIVO // TAG: sarahtonin-21</footer>
+            </div>
         </body>
         </html>
         
