@@ -4,59 +4,176 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Iván Chollos | Selección Diaria</title>
+            <title>Amazon.es : Ofertas del Día</title>
             <style>
-                body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f8f9fa; margin: 0; color: #1d1d1f; }
-                .navbar { background: #ffffff; padding: 20px; text-align: center; border-bottom: 1px solid #d2d2d7; position: sticky; top: 0; z-index: 100; }
-                .navbar h1 { margin: 0; font-size: 1.2rem; font-weight: 600; letter-spacing: 0.5px; }
-                .hero { text-align: center; padding: 60px 20px; background: white; }
-                .hero h2 { font-size: 3rem; margin: 0; letter-spacing: -1px; }
-                .hero p { color: #86868b; font-size: 1.2rem; margin-top: 10px; }
-                .container { max-width: 1000px; margin: -40px auto 100px; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-                .product-card { background: white; border-radius: 20px; padding: 40px; box-shadow: 0 8px 30px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #f2f2f2; }
-                .product-card:hover { transform: scale(1.02); }
-                .tag { color: #bf4800; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-                h2 { font-size: 1.5rem; margin: 15px 0; line-height: 1.2; }
-                .price { font-size: 2rem; font-weight: 700; color: #1d1d1f; margin: 20px 0; }
-                p { color: #424245; line-height: 1.5; margin-bottom: 30px; }
-                .buy-button { display: block; background: #0071e3; color: white; text-decoration: none; padding: 16px; border-radius: 12px; font-weight: 600; text-align: center; transition: 0.2s; }
-                .buy-button:hover { background: #0077ed; }
-                footer { text-align: center; padding: 50px; color: #86868b; font-size: 12px; }
+                /* RESET Y FUENTES AMAZON */
+                body { font-family: "Amazon Ember", Arial, sans-serif; background-color: #E3E6E6; margin: 0; padding: 0; color: #0F1111; }
+                a { text-decoration: none; color: #007185; }
+                a:hover { color: #C7511F; text-decoration: underline; }
+                
+                /* CABECERA AMAZON */
+                header { background-color: #232f3e; padding: 10px 20px; color: white; display: flex; align-items: center; }
+                .nav-logo { font-size: 20px; font-weight: bold; letter-spacing: -1px; margin-right: 20px; }
+                .nav-search { flex-grow: 1; background: white; border-radius: 4px; height: 40px; margin: 0 10px; display: flex; align-items: center; padding-left: 10px; color: #666; font-size: 14px; }
+                
+                /* CONTENEDOR PRINCIPAL */
+                .main-container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+                .results-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+                
+                /* TARJETA DE PRODUCTO (CLON EXACTO) */
+                .s-result-item { background: #fff; border: 1px solid #F5F5F5; border-radius: 8px; margin-bottom: 15px; padding: 15px; display: flex; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+                .sg-col-inner { width: 100%; display: flex; flex-direction: column; }
+                
+                /* TIPOGRAFÍA Y PRECIOS */
+                h2 { font-size: 16px !important; line-height: 1.3 !important; font-weight: 400 !important; margin-bottom: 5px; }
+                .a-price-whole { font-size: 28px; font-weight: 500; color: #0F1111; }
+                .a-price-symbol { font-size: 14px; vertical-align: top; padding-top: 4px; font-weight: 500; }
+                .a-text-strike { text-decoration: line-through; color: #565959; font-size: 12px; margin-left: 5px; }
+                .a-color-secondary { color: #565959; }
+                .a-icon-alt { color: #DE7921; font-weight: bold; }
+                
+                /* BOTÓN DE COMPRA (EL AMARILLO DE AMAZON) */
+                .a-button-primary {
+                    background: #FFD814;
+                    border-color: #FCD200;
+                    border-radius: 20px;
+                    box-shadow: 0 2px 5px rgba(213,217,217,.5);
+                    color: #0F1111;
+                    display: inline-block;
+                    padding: 8px 30px;
+                    text-align: center;
+                    font-size: 13px;
+                    font-weight: 500;
+                    margin-top: 10px;
+                    text-decoration: none !important;
+                    width: fit-content;
+                }
+                .a-button-primary:hover { background: #F7CA00; border-color: #F2C200; }
+                
+                /* FOOTER */
+                .footer-legal { text-align: center; margin-top: 30px; font-size: 11px; color: #565959; }
             </style>
         </head>
         <body>
-            <div class="navbar"><h1>IVÁN CHOLLOS</h1></div>
-            <div class="hero">
-                <h2>Las mejores ofertas.</h2>
-                <p>Seleccionadas hoy por inteligencia artificial.</p>
+            <header>
+                <div class="nav-logo">amazon.es <span style="font-weight:normal; font-size:12px; color:#ccc;">| Selección IA</span></div>
+                <div class="nav-search">Buscar ofertas del día...</div>
+            </header>
+            
+            <div class="main-container">
+                <div class="results-header">Resultados para "Ofertas Flash Hoy"</div>
+                
+                ```html
+<div class="s-result-item">
+    <div class="sg-col-inner">
+        <div class="a-section a-spacing-none s-image-overlay-black">
+            <img src="https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg" alt="Logitech G G435">
+            <div class="a-section a-spacing-small s-padding-left-small s-padding-right-small">
+                <div class="a-section a-spacing-none a-spacing-top-small">
+                    <h2 class="a-size-mini a-spacing-none a-color-base s-line-clamp-2">
+                        <a class="a-link-normal a-text-normal" href="https://www.amazon.es/Logitech-G435-Auriculares-Inal%C3%A1mbricos-PC-PS4-PS5?tag=sarahtonin-21">
+                            <span class="a-size-medium a-color-base a-text-normal">Auriculares Gaming Logitech G435 Inalámbricos</span>
+                        </a>
+                    </h2>
+                </div>
+                <div class="a-section a-spacing-none a-spacing-top-micro">
+                    <div class="a-row a-size-small">
+                        <span class="a-icon-alt">⭐⭐⭐⭐⭐ 4.8 de 5 estrellas</span>
+                        <span class="a-size-small a-color-secondary"> (Más de 1.000 valoraciones)</span>
+                    </div>
+                </div>
+                <div class="a-section a-spacing-none a-spacing-top-small">
+                    <div class="a-row a-size-base a-color-base">
+                        <span class="a-price-symbol">€</span><span class="a-price-whole">49</span>
+                        <span class="a-size-small a-color-secondary a-text-strike">PVP: 69€</span>
+                    </div>
+                </div>
+                <div class="a-section a-spacing-none a-spacing-top-micro">
+                    <span class="a-size-small a-color-secondary">Entrega GRATIS por </span><span class="a-text-bold a-color-base">Amazon Prime</span>
+                </div>
+                <div class="a-section a-spacing-none a-spacing-top-small">
+                    <a href="https://www.amazon.es/Logitech-G435-Auriculares-Inal%C3%A1mbricos-PC-PS4-PS5?tag=sarahtonin-21" class="a-button-primary">Ver Oferta</a>
+                </div>
             </div>
-            <div class="container">```html
-<div class='product-card'>
-    <span class='tag'>OFERTA DESTACADA</span>
-    <h2>Amazon Fire TV Stick 4K Max</h2>
-    <div class='price'>Precio rebajado</div>
-    <p>Reproductor de streaming más vendido con soporte 4K, WiFi 6E, Dolby Vision, HDR10+ y Dolby Atmos.</p>
-    <a href='https://www.amazon.es/dp/B0C7J36X98?tag=sarahtonin-21' target='_blank' class='buy-button'>Ver en Amazon.es</a>
+        </div>
+    </div>
 </div>
-<div class='product-card'>
-    <span class='tag'>OFERTA DESTACADA</span>
-    <h2>Crucial X9 SSD 2TB Portátil</h2>
-    <div class='price'>Precio rebajado 17%</div>
-    <p>Disco SSD más vendido con hasta 1050MB/s, compatible con PC, Mac, PlayStation y Xbox vía USB-C 3.2.</p>
-    <a href='https://www.amazon.es/dp/B0CBLQL6VP?tag=sarahtonin-21' target='_blank' class='buy-button'>Ver en Amazon.es</a>
+<div class="s-result-item">
+    <div class="sg-col-inner">
+        <div class="a-section a-spacing-none s-image-overlay-black">
+            <img src="https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg" alt="MacBook Air M4">
+            <div class="a-section a-spacing-small s-padding-left-small s-padding-right-small">
+                <div class="a-section a-spacing-none a-spacing-top-small">
+                    <h2 class="a-size-mini a-spacing-none a-color-base s-line-clamp-2">
+                        <a class="a-link-normal a-text-normal" href="https://www.amazon.es/Apple-MacBook-Air-13-pulgadas-Chip?tag=sarahtonin-21">
+                            <span class="a-size-medium a-color-base a-text-normal">MacBook Air 13" M4 16GB 256GB</span>
+                        </a>
+                    </h2>
+                </div>
+                <div class="a-section a-spacing-none a-spacing-top-micro">
+                    <div class="a-row a-size-small">
+                        <span class="a-icon-alt">⭐⭐⭐⭐⭐ 4.8 de 5 estrellas</span>
+                        <span class="a-size-small a-color-secondary"> (Más de 1.000 valoraciones)</span>
+                    </div>
+                </div>
+                <div class="a-section a-spacing-none a-spacing-top-small">
+                    <div class="a-row a-size-base a-color-base">
+                        <span class="a-price-symbol">€</span><span class="a-price-whole">999</span>
+                        <span class="a-size-small a-color-secondary a-text-strike">PVP: 1219€</span>
+                    </div>
+                </div>
+                <div class="a-section a-spacing-none a-spacing-top-micro">
+                    <span class="a-size-small a-color-secondary">Entrega GRATIS por </span><span class="a-text-bold a-color-base">Amazon Prime</span>
+                </div>
+                <div class="a-section a-spacing-none a-spacing-top-small">
+                    <a href="https://www.amazon.es/Apple-MacBook-Air-13-pulgadas-Chip?tag=sarahtonin-21" class="a-button-primary">Ver Oferta</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<div class='product-card'>
-    <span class='tag'>OFERTA DESTACADA</span>
-    <h2>Mando Xbox con 1 mes Game Pass</h2>
-    <div class='price'>Precio rebajado 20% + 35%</div>
-    <p>Mando Xbox con descuento especial y mes gratis de Game Pass para gaming inmersivo.</p>
-    <a href='https://www.amazon.es/s?k=mando+xbox+game+pass&tag=sarahtonin-21' target='_blank' class='buy-button'>Ver en Amazon.es</a>
+<div class="s-result-item">
+    <div class="sg-col-inner">
+        <div class="a-section a-spacing-none s-image-overlay-black">
+            <img src="https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg" alt="Fire TV Stick 4K Max">
+            <div class="a-section a-spacing-small s-padding-left-small s-padding-right-small">
+                <div class="a-section a-spacing-none a-spacing-top-small">
+                    <h2 class="a-size-mini a-spacing-none a-color-base s-line-clamp-2">
+                        <a class="a-link-normal a-text-normal" href="https://www.amazon.es/Amazon-Fire-TV-Stick-Max?tag=sarahtonin-21">
+                            <span class="a-size-medium a-color-base a-text-normal">Amazon Fire TV Stick 4K Max</span>
+                        </a>
+                    </h2>
+                </div>
+                <div class="a-section a-spacing-none a-spacing-top-micro">
+                    <div class="a-row a-size-small">
+                        <span class="a-icon-alt">⭐⭐⭐⭐⭐ 4.8 de 5 estrellas</span>
+                        <span class="a-size-small a-color-secondary"> (Más de 1.000 valoraciones)</span>
+                    </div>
+                </div>
+                <div class="a-section a-spacing-none a-spacing-top-small">
+                    <div class="a-row a-size-base a-color-base">
+                        <span class="a-price-symbol">€</span><span class="a-price-whole">39</span>
+                        <span class="a-size-small a-color-secondary a-text-strike">PVP: 60€</span>
+                    </div>
+                </div>
+                <div class="a-section a-spacing-none a-spacing-top-micro">
+                    <span class="a-size-small a-color-secondary">Entrega GRATIS por </span><span class="a-text-bold a-color-base">Amazon Prime</span>
+                </div>
+                <div class="a-section a-spacing-none a-spacing-top-small">
+                    <a href="https://www.amazon.es/Amazon-Fire-TV-Stick-Max?tag=sarahtonin-21" class="a-button-primary">Ver Oferta</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-```</div>
-            <footer>
-                © 2025 Iván Chollos. Actualizado cada hora por Raspberry Pi 3B.<br>
-                Como Afiliado de Amazon, percibo dinero con las compras elegibles.
-            </footer>
+```
+                
+            </div>
+            
+            <div class="footer-legal">
+                <p>Iván Chollos participa en el Programa de Afiliados de Amazon EU.</p>
+                <p>© 1996-2025, Amazon.com, Inc. o sus afiliados</p>
+            </div>
         </body>
         </html>
         
