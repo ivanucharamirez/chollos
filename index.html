@@ -1,157 +1,37 @@
 
         <!DOCTYPE html>
-        <html lang="es">
+        <html>
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>⚡ OFERTAS LÍMITE | Amazon Deals</title>
-            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+            <title>Acceso Directo a Ofertas Amazon</title>
             <style>
-                :root { --primary: #FF9900; --accent: #D32F2F; --dark: #131921; }
-                body { font-family: 'Poppins', sans-serif; background-color: #f0f2f5; margin: 0; padding: 0; }
-                
-                /* BARRA SUPERIOR DE URGENCIA */
-                .urgency-bar { background: var(--accent); color: white; text-align: center; padding: 8px; font-weight: bold; font-size: 0.9rem; animation: flash 2s infinite; }
-                @keyframes flash { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
-                
-                header { background: var(--dark); padding: 20px; text-align: center; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-                h1 { margin: 0; font-style: italic; letter-spacing: 1px; }
-                .countdown { color: #FF9900; font-size: 1.4rem; font-weight: 800; margin-top: 5px; }
-
-                .container { max-width: 900px; margin: 20px auto; padding: 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-                
-                /* TARJETA DE PRODUCTO */
-                .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); position: relative; border: 1px solid #e0e0e0; transition: transform 0.2s; }
-                .card:hover { transform: scale(1.02); border-color: var(--primary); }
-                
-                .badge-discount { position: absolute; top: 10px; left: 0; background: var(--accent); color: white; padding: 4px 12px; font-weight: 800; font-size: 0.8rem; box-shadow: 2px 2px 5px rgba(0,0,0,0.2); }
-                
-                img { width: 100%; height: 220px; object-fit: contain; padding: 20px; background: white; border-bottom: 1px solid #f0f0f0; }
-                
-                .card-content { padding: 15px; text-align: center; }
-                h3 { margin: 0 0 10px; font-size: 1rem; color: #333; line-height: 1.4; height: 2.8em; overflow: hidden; }
-                
-                .price-new { color: #B12704; font-size: 1.8rem; font-weight: 800; display: block; margin-bottom: 10px; }
-                
-                .scarcity-text { color: #D32F2F; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; text-align: left; }
-                .progress-bar { width: 100%; height: 6px; background: #eee; border-radius: 3px; margin-bottom: 15px; overflow: hidden; }
-                .progress-fill { height: 100%; background: linear-gradient(90deg, #ff9900, #ff4444); }
-                
-                .cta-button { display: block; width: 100%; padding: 12px 0; background: #FFD814; border: 1px solid #FCD200; border-radius: 8px; color: #111; font-weight: bold; text-decoration: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1); animation: pulse 2s infinite; }
-                @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 216, 20, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(0,0,0,0); } 100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); } }
-                
-                .shipping-info { margin-top: 10px; font-size: 0.75rem; color: #007600; font-weight: 600; }
-                
-                /* NOTIFICACIÓN SOCIAL (JS) */
-                .toast { position: fixed; bottom: 20px; left: 20px; background: white; padding: 12px 20px; border-radius: 50px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 10px; z-index: 99; transform: translateY(150%); transition: transform 0.5s; border: 1px solid #eee; }
-                .toast.show { transform: translateY(0); }
-                .toast-icon { font-size: 1.2rem; }
-                .toast-text { font-size: 0.8rem; color: #333; }
-                .toast-text strong { color: var(--accent); }
-
-                footer { text-align: center; padding: 30px; color: #888; font-size: 0.8rem; }
+                body { font-family: -apple-system, sans-serif; background: #f4f4f7; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+                .container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; max-width: 400px; width: 90%; }
+                h1 { font-size: 1.2rem; color: #333; margin-bottom: 20px; }
+                ul { list-style: none; padding: 0; }
+                li { margin-bottom: 15px; }
+                a { display: block; background: #232f3e; color: white; padding: 15px; text-decoration: none; border-radius: 12px; font-weight: bold; transition: 0.2s; }
+                a:hover { background: #37475a; transform: scale(1.02); }
+                .footer { margin-top: 20px; font-size: 0.7rem; color: #888; }
             </style>
         </head>
         <body>
-            <div class="urgency-bar">⚠️ ATENCIÓN: PRECIOS VÁLIDOS SOLO DURANTE LA PRÓXIMA HORA</div>
-            <header>
-                <h1>IVAN CHOLLOS <span style="color:#FF9900;">VIP</span></h1>
-                <div class="countdown" id="timer">00:59:59</div>
-            </header>
-            
             <div class="container">
-                <div class="card">
-    <div class="badge-discount">OFERTA FLASH</div>
-    <img src="https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg" alt="Producto" onerror="this.src='https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg'">
-    <div class="card-content">
-        <h3>Amazon Fire TV Stick 4K</h3>
-        <div class="price-container">
-            <span class="price-new">39,99€</span>
-        </div>
-        <p class="scarcity-text">🔥 Alta demanda en este momento</p>
-        <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
-        <a href="https://www.amazon.es/Fire-TV-Stick-4K/s?tag=sarahtonin-21" class="cta-button">COMPRAR AHORA</a>
-        <p class="shipping-info">✅ Envío Prime Disponible</p>
-        <p class="stock-info">Últimas unidades</p>
-    </div>
-</div>
+                <h1>⚡ Chollos Verificados</h1>
+                <ul>No puedo proporcionar las URLs específicas con el tag "sarahtonin-21" que solicitas, ya que los resultados de búsqueda no incluyen enlaces directos completos a los productos individuales en Amazon, sino solo a artículos de reseña que hablan sobre las ofertas[1][2][3][4].
 
-<div class="card">
-    <div class="badge-discount">OFERTA FLASH</div>
-    <img src="https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg" alt="Producto" onerror="this.src='https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg'">
-    <div class="card-content">
-        <h3>Cámara TP-Link Tapo C210 2K</h3>
-        <div class="price-container">
-            <span class="price-new">19,99€</span>
-        </div>
-        <p class="scarcity-text">🔥 Alta demanda en este momento</p>
-        <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
-        <a href="https://www.amazon.es/TP-Link-Tapo-C210/s?tag=sarahtonin-21" class="cta-button">COMPRAR AHORA</a>
-        <p class="shipping-info">✅ Envío Prime Disponible</p>
-        <p class="stock-info">Últimas unidades</p>
-    </div>
-</div>
+Sin embargo, basándome en las ofertas reales mencionadas en los resultados, aquí están 3 productos en oferta:
 
-<div class="card">
-    <div class="badge-discount">OFERTA FLASH</div>
-    <img src="https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg" alt="Producto" onerror="this.src='https://m.media-amazon.com/images/I/61m1V5i2+WL._AC_SY300_SX300_.jpg'">
-    <div class="card-content">
-        <h3>Echo Dot Altavoz Inteligente</h3>
-        <div class="price-container">
-            <span class="price-new">29,99€</span>
-        </div>
-        <p class="scarcity-text">🔥 Alta demanda en este momento</p>
-        <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
-        <a href="https://www.amazon.es/Echo-Dot/s?tag=sarahtonin-21" class="cta-button">COMPRAR AHORA</a>
-        <p class="shipping-info">✅ Envío Prime Disponible</p>
-        <p class="stock-info">Últimas unidades</p>
-    </div>
-</div>
+<li><a href='https://www.amazon.es'>Cepillo de dientes eléctrico Oral-B - 47% descuento</a></li>
+
+<li><a href='https://www.amazon.es'>Recortadora Philips 12 en 1 - 52% descuento</a></li>
+
+<li><a href='https://www.amazon.es'>Despertador inteligente Echo Pop - 51% descuento</a></li>
+
+Para acceder a estas ofertas con el parámetro específico que mencionas, tendrías que buscarlas directamente en Amazon.es y añadir el tag a la URL de cada producto.</ul>
+                <div class="footer">Serás redirigido a la ficha oficial de Amazon.es</div>
             </div>
-
-            <div class="toast" id="toast">
-                <span class="toast-icon">🛒</span>
-                <div class="toast-text">
-                    <span id="buyer-name">Maria</span> acaba de comprar <br>
-                    <strong>Ahorrando 35€</strong>
-                </div>
-            </div>
-
-            <footer>
-                <p>Sitio seguro verificado. Afiliado oficial.</p>
-                <p>© 2025 Selección Premium</p>
-            </footer>
-
-            <script>
-                // Cuenta atrás cíclica (Dura 1 hora siempre)
-                function startTimer(duration, display) {
-                    var timer = duration, minutes, seconds;
-                    setInterval(function () {
-                        minutes = parseInt(timer / 60, 10);
-                        seconds = parseInt(timer % 60, 10);
-                        minutes = minutes < 10 ? "0" + minutes : minutes;
-                        seconds = seconds < 10 ? "0" + seconds : seconds;
-                        display.textContent = "00:" + minutes + ":" + seconds;
-                        if (--timer < 0) timer = duration;
-                    }, 1000);
-                }
-                window.onload = function () {
-                    startTimer(3599, document.querySelector('#timer'));
-                };
-
-                // Notificaciones Fake de Compra (Social Proof)
-                const names = ['Pablo', 'Ana', 'Carlos', 'Lucía', 'David', 'Elena'];
-                const actions = ['compró esto', 'aprovechó la oferta', 'pidió 2 unidades'];
-                
-                setInterval(() => {
-                    const toast = document.getElementById('toast');
-                    const name = names[Math.floor(Math.random() * names.length)];
-                    document.getElementById('buyer-name').innerText = name;
-                    
-                    toast.classList.add('show');
-                    setTimeout(() => { toast.classList.remove('show'); }, 4000);
-                }, 8000); // Cada 8 segundos sale una notificación
-            </script>
         </body>
         </html>
         
