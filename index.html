@@ -4,33 +4,44 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>TERMINAL_ARBITRAJE_V1</title>
+            <title>IVÁN | INSIDER SELECTION</title>
             <style>
-                body { background: #0a0a0b; color: #e0e0e0; font-family: 'Courier New', monospace; margin: 0; padding: 20px; }
-                .terminal { max-width: 800px; margin: auto; border: 1px solid #333; background: #000; padding: 20px; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
-                header { border-bottom: 2px solid #222; padding-bottom: 20px; margin-bottom: 30px; }
-                h1 { color: #fff; font-size: 1.2rem; margin: 0; letter-spacing: 2px; }
-                .data-row { display: flex; align-items: center; border-bottom: 1px solid #111; padding: 20px 0; gap: 20px; }
-                .status-blink { color: #00ff00; font-size: 0.7rem; font-weight: bold; animation: blink 1s infinite; }
-                @keyframes blink { 0%{opacity:0;} 50%{opacity:1;} 100%{opacity:0;} }
-                .product-info { flex-grow: 1; }
-                .asin { color: #555; font-size: 0.7rem; }
-                h3 { margin: 5px 0; font-size: 1rem; color: #aaa; }
-                .price-action { text-align: right; }
-                .value { font-size: 1.8rem; font-weight: bold; color: #fff; margin-bottom: 10px; }
-                .buy-link { background: #fff; color: #000; padding: 10px 20px; text-decoration: none; font-weight: bold; font-size: 0.8rem; border-radius: 2px; transition: 0.3s; }
-                .buy-link:hover { background: #00ff00; }
-                footer { margin-top: 40px; font-size: 0.7rem; color: #333; text-align: center; }
+                :root { --main: #000; --accent: #c5a059; --bg: #fafafa; --text: #111; }
+                body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); margin: 0; padding: 20px; color: var(--text); }
+                .wrapper { max-width: 1200px; margin: auto; }
+                header { text-align: center; padding: 60px 0; }
+                header h1 { font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; color: #888; margin-bottom: 10px; }
+                header h2 { font-size: 2.5rem; font-weight: 800; margin: 0; color: var(--main); }
+                
+                .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+                .opportunity-card { background: white; border-radius: 2px; padding: 40px; border: 1px solid #eee; position: relative; transition: 0.4s; }
+                .opportunity-card:hover { box-shadow: 0 30px 60px rgba(0,0,0,0.05); transform: translateY(-5px); }
+                
+                .saving-badge { position: absolute; top: 20px; right: 20px; background: var(--main); color: white; padding: 5px 12px; font-size: 0.7rem; font-weight: bold; }
+                .image-wrap { height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; }
+                .image-wrap img { max-height: 100%; mix-blend-mode: multiply; }
+                
+                .stock-status { color: #27ae60; font-size: 0.6rem; font-weight: bold; display: block; margin-bottom: 10px; }
+                h3 { font-size: 1.1rem; font-weight: 600; margin: 0 0 20px; line-height: 1.4; color: #333; height: 3em; overflow: hidden; }
+                
+                .price-row { display: flex; align-items: baseline; gap: 15px; margin-bottom: 30px; border-top: 1px solid #f5f5f5; padding-top: 20px; }
+                .old-price { text-decoration: line-through; color: #999; font-size: 1rem; }
+                .new-price { font-size: 2rem; font-weight: 800; color: var(--main); }
+                
+                .action-btn { display: block; background: var(--main); color: white; text-align: center; padding: 18px; text-decoration: none; font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s; }
+                .action-btn:hover { background: var(--accent); }
+                
+                footer { text-align: center; padding: 100px 0 50px; color: #ccc; font-size: 0.7rem; letter-spacing: 1px; }
             </style>
         </head>
         <body>
-            <div class="terminal">
+            <div class="wrapper">
                 <header>
-                    <h1>TERMINAL DE ARBITRAJE // IVÁN_RAMÍREZ</h1>
-                    <p style="font-size:0.7rem; color:#444;">ESCANEANDO AMAZON_ES_NODES... [ESTADO: OK]</p>
+                    <h1>Private Access Only</h1>
+                    <h2>Oportunidades de Arbitraje</h2>
                 </header>
-                <div class="results"></div>
-                <footer>SISTEMA DE AFILIACIÓN ACTIVO // TAG: sarahtonin-21</footer>
+                <div class="grid"></div>
+                <footer>SISTEMA AUTOMATIZADO POR RASPBERRY PI 3B // IVÁN RAMÍREZ EXCLUSIVE</footer>
             </div>
         </body>
         </html>
