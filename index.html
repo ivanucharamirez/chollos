@@ -4,73 +4,46 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Amazon.es : Ofertas del Día</title>
+            <title>Iván | Selección Premium</title>
+            <link rel="stylesheet" href="[https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;800&display=swap](https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;800&display=swap)">
             <style>
-                /* RESET Y FUENTES AMAZON */
-                body { font-family: "Amazon Ember", Arial, sans-serif; background-color: #E3E6E6; margin: 0; padding: 0; color: #0F1111; }
-                a { text-decoration: none; color: #007185; }
-                a:hover { color: #C7511F; text-decoration: underline; }
+                :root { --bg: #000000; --text: #f5f5f7; --card: #1c1c1e; --accent: #2997ff; }
+                body { font-family: 'SF Pro Display', -apple-system, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 20px; -webkit-font-smoothing: antialiased; }
                 
-                /* CABECERA AMAZON */
-                header { background-color: #232f3e; padding: 10px 20px; color: white; display: flex; align-items: center; }
-                .nav-logo { font-size: 20px; font-weight: bold; letter-spacing: -1px; margin-right: 20px; }
-                .nav-search { flex-grow: 1; background: white; border-radius: 4px; height: 40px; margin: 0 10px; display: flex; align-items: center; padding-left: 10px; color: #666; font-size: 14px; }
+                header { text-align: center; padding: 60px 0 40px; }
+                h1 { font-weight: 800; font-size: 3rem; margin: 0; letter-spacing: -1px; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+                p.subtitle { color: #86868b; font-size: 1.2rem; margin-top: 10px; }
                 
-                /* CONTENEDOR PRINCIPAL */
-                .main-container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-                .results-header { font-weight: bold; font-size: 18px; margin-bottom: 15px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+                .container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
                 
-                /* TARJETA DE PRODUCTO (CLON EXACTO) */
-                .s-result-item { background: #fff; border: 1px solid #F5F5F5; border-radius: 8px; margin-bottom: 15px; padding: 15px; display: flex; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
-                .sg-col-inner { width: 100%; display: flex; flex-direction: column; }
+                .product-card { background: var(--card); border-radius: 30px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5); transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+                .product-card:hover { transform: scale(1.03); }
                 
-                /* TIPOGRAFÍA Y PRECIOS */
-                h2 { font-size: 16px !important; line-height: 1.3 !important; font-weight: 400 !important; margin-bottom: 5px; }
-                .a-price-whole { font-size: 28px; font-weight: 500; color: #0F1111; }
-                .a-price-symbol { font-size: 14px; vertical-align: top; padding-top: 4px; font-weight: 500; }
-                .a-text-strike { text-decoration: line-through; color: #565959; font-size: 12px; margin-left: 5px; }
-                .a-color-secondary { color: #565959; }
-                .a-icon-alt { color: #DE7921; font-weight: bold; }
+                .img-box { height: 300px; background: white; display: flex; align-items: center; justify-content: center; padding: 30px; }
+                img { max-width: 100%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1)); transition: transform 0.3s; }
+                .product-card:hover img { transform: scale(1.05); }
                 
-                /* BOTÓN DE COMPRA (EL AMARILLO DE AMAZON) */
-                .a-button-primary {
-                    background: #FFD814;
-                    border-color: #FCD200;
-                    border-radius: 20px;
-                    box-shadow: 0 2px 5px rgba(213,217,217,.5);
-                    color: #0F1111;
-                    display: inline-block;
-                    padding: 8px 30px;
-                    text-align: center;
-                    font-size: 13px;
-                    font-weight: 500;
-                    margin-top: 10px;
-                    text-decoration: none !important;
-                    width: fit-content;
-                }
-                .a-button-primary:hover { background: #F7CA00; border-color: #F2C200; }
+                .content { padding: 40px; }
+                .label { color: var(--accent); font-weight: 800; letter-spacing: 1px; font-size: 0.8rem; text-transform: uppercase; }
+                h2 { font-size: 1.8rem; margin: 15px 0; line-height: 1.2; height: 2.4em; overflow: hidden; }
                 
-                /* FOOTER */
-                .footer-legal { text-align: center; margin-top: 30px; font-size: 11px; color: #565959; }
+                .price { font-size: 2.5rem; font-weight: 800; display: block; margin-bottom: 30px; }
+                
+                .buy-btn { display: block; background: var(--accent); color: white; text-decoration: none; padding: 18px; border-radius: 18px; text-align: center; font-weight: 600; font-size: 1.1rem; transition: background 0.2s; }
+                .buy-btn:hover { background: #007aff; }
+                
+                footer { text-align: center; padding: 60px; color: #86868b; font-size: 0.9rem; }
             </style>
         </head>
         <body>
             <header>
-                <div class="nav-logo">amazon.es <span style="font-weight:normal; font-size:12px; color:#ccc;">| Selección IA</span></div>
-                <div class="nav-search">Buscar ofertas del día...</div>
+                <h1>Iván Selection.</h1>
+                <p class="subtitle">Lo mejor de hoy, elegido por IA.</p>
             </header>
-            
-            <div class="main-container">
-                <div class="results-header">Resultados para "Ofertas Flash Hoy"</div>
-                
-                <p>Error buscando ofertas: Expecting value: line 1 column 1 (char 0)</p>
-                
+            <div class="container">
+                <div class='error'>Sincronizando ofertas... Reintentando en 60s.</div>
             </div>
-            
-            <div class="footer-legal">
-                <p>Iván Chollos participa en el Programa de Afiliados de Amazon EU.</p>
-                <p>© 1996-2025, Amazon.com, Inc. o sus afiliados</p>
-            </div>
+            <footer>Actualizado automáticamente. Afiliado de Amazon.</footer>
         </body>
         </html>
         
